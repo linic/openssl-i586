@@ -1,0 +1,5 @@
+services:
+  main:
+    image: linichotmailca/openssl-i586:${OPENSSL_VERSION:-latest}
+    build: .
+
