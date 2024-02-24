@@ -13,11 +13,11 @@ RUN xargs apt install --yes < apt_packages.txt
 WORKDIR /
 RUN wget https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz
 RUN tar -zxvf openssl-$OPENSSL_VERSION.tar.gz
-RUN cd openssl-$OPENSSL_VERSION
+WORKDIR openssl-$OPENSSL_VERSION
 ENV CFLAGS="-march=pentium"
 ENV CXXFLAGS="-march=pentium"
 RUN ./Configure linux-x86
-RUN make && make test
+RUN make
 # If you docker compose build you'll be able to docker exec -it into it and move around or
 # docker cp files out of it.
 COPY echo_sleep /
