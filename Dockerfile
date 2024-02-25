@@ -1,8 +1,5 @@
-# NOTE: Copied from https://www.openssl.org/source/ 
-# "[OpenSSL] versions (including 1.1.1, 1.1.0, 1.0.2, 1.0.0 and 0.9.8) are now out of support and 
-# should not be used"
 FROM debian:latest
-ARG OPENSSL_VERSION=1.1.1o
+ARG OPENSSL_VERSION=3.0.0
 WORKDIR /tmp/
 RUN apt update
 RUN apt dist-upgrade
