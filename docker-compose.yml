@@ -1,5 +1,13 @@
 services:
   main:
-    image: linichotmailca/openssl-i586:${OPENSSL_VERSION:-latest}
-    build: .
+    build:
+      context: .
+      args:
+        - ARCHITECTURE=x86
+        - OPENSSL_VERSION=3.0.16
+        - TCL_VERSION=16.x
+      tags:
+        - linichotmailca/openssl-i586:3.0.16
+        - linichotmailca/openssl-i586:latest
+      dockerfile: Dockerfile
 
