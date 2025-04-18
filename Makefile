@@ -1,6 +1,6 @@
 # Build openssl libraries for i586
 ARCHITECTURE=x86
-OPENSSL_VERSION=3.0.16
+OPENSSL_VERSION=3.2.0
 TCL_VERSION=16.x
 
 all: build
